@@ -1,10 +1,10 @@
 import { createStore } from './redux.js'
 
-function reducer(state, action) {
-    if (action.type === 'abc') {
+function reducer(state = {}, action) {
+    if (action.type === 'increment') {
         return {
             ...state,
-            abc: 'OK'
+            count: state.count ? state.count + 1 : 1
         }
     }
 
@@ -19,4 +19,4 @@ const store = createStore(reducer)
 
 store.subscribe(update)
 
-store.dispatch({ type: 'abc' })
+store.dispatch({ type: 'increment' })
