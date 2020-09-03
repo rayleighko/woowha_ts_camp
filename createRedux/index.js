@@ -21,4 +21,10 @@ const store = createStore(reducer)
 
 store.subscribe(update)
 
-store.dispatch({ type: INCREMENT })
+function actionCreator(type) {
+    return {
+        type: type
+    }
+}
+
+store.dispatch(actionCreator(INCREMENT))
