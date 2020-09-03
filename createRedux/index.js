@@ -27,4 +27,8 @@ function actionCreator(type) {
     }
 }
 
-store.dispatch(actionCreator(INCREMENT))
+function increment() {
+    store.dispatch(actionCreator(INCREMENT))
+}
+
+increment()
